@@ -1,0 +1,42 @@
+2024-09-05 10:38:35 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:38:36 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:39:53 [[32minfo[39m] Method: POST URL: /api/register Status: 200}
+2024-09-05 10:39:55 [[32minfo[39m] New User Created}
+2024-09-05 10:40:34 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 10:41:34 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:42:11 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:43:04 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:43:05 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:43:09 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:44:30 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:44:32 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:44:36 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:44:38 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:44:40 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:44:41 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:44:43 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:44:46 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:44:47 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:44:50 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:45:29 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:45:30 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:46:10 [[32minfo[39m] Method: GET URL: /api/login Status: 200}
+2024-09-05 10:46:16 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 10:47:27 [[32minfo[39m] Method: POST URL: /api/checkLogin Status: 200}
+2024-09-05 10:47:32 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:47:46 [[32minfo[39m] Server started on port 9000}
+2024-09-05 10:47:48 [[32minfo[39m] Database connection successful!}
+2024-09-05 10:47:51 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 10:49:04 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 10:49:15 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 11:55:07 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 11:55:14 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 12:06:27 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 16:14:53 [[32minfo[39m] Server started on port 9000}
+2024-09-05 16:14:54 [[32minfo[39m] Database connection successful!}
+2024-09-05 16:15:50 [[32minfo[39m] Method: POST URL: /api/register Status: 200}
+2024-09-05 16:15:51 [[32minfo[39m] New User Created}
+2024-09-05 16:16:29 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-05 16:16:55 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
+2024-09-05 16:17:34 [[32minfo[39m] Method: GET URL: /api/logout Status: 200}
+2024-09-05 16:17:54 [[32minfo[39m] Method: GET URL: /api/logout Status: 200}
