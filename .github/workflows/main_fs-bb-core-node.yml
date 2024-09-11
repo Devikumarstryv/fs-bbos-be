@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './release' # Updated path to a specific folder for deployment
   NODE_VERSION: '20.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
@@ -34,14 +34,18 @@ jobs:
           npm run test --if-present
           popd
 
+      - name: Create directory for release
+        run: mkdir -p release
+
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          zip -r ./release/release.zip ./* # Changed path to store the zip inside the release folder
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: ./release/release.zip # Upload the zip from the release folder
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +59,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip ./release/release.zip -d release # Ensure that unzip extracts in a proper directory
       
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
@@ -63,5 +67,5 @@ jobs:
         with:
           app-name: 'fs-bb-core-node'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: './release' # Point directly to the release folder with the unzipped content
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E63947D08B14FE4BB81E7D59DDCD422 }}
