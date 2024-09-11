@@ -1,6 +1,8 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const createHandler = require("azure-function-express").createHandler;
+
 
 const userRoutes = require('./routes/mainRoute');
 require('dotenv').config();
@@ -8,8 +10,7 @@ const bcrypt = require('bcrypt');
 const {pool} = require('./db/pool')
 const { logger, httpLogger } = require('./utlis/winstonLogger');
 
-const redis = require('redis');
-
+// const redis = require('redis');
 
 
 const app = express();
@@ -45,7 +46,9 @@ checkConnection();
 
 app.use('/api', userRoutes);
 
-const PORT = process.env.PORT || 9000;
-app.listen(PORT, () => {
-  logger.info(`Server started on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 9000;
+// app.listen(PORT, () => {
+//   logger.info(`Server started on port ${PORT}`);
+// });
+
+module.exports = createHandler(app);

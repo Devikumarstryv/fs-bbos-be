@@ -2,178 +2,38 @@
 2024-09-09 10:18:12 [[32minfo[39m] Database connection successful!}
 2024-09-09 10:20:20 [[32minfo[39m] Method: POST URL: /api/register Status: 200}
 2024-09-09 10:20:21 [[32minfo[39m] New User Created}
-2024-09-09 18:52:42 [[32minfo[39m] Server started on port 9000}
-2024-09-09 18:52:44 [[32minfo[39m] Database connection successful!}
-2024-09-09 18:52:48 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 18:53:42 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 18:56:38 [[32minfo[39m] Server started on port 9000}
-2024-09-09 18:56:40 [[32minfo[39m] Database connection successful!}
-2024-09-09 18:56:43 [[32minfo[39m] Server started on port 9000}
-2024-09-09 18:56:44 [[32minfo[39m] Database connection successful!}
-2024-09-09 18:56:49 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 18:56:59 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 18:57:24 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 18:57:33 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 18:57:59 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:02:02 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:02:04 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:02:06 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:03:15 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:03:17 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:03:19 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:03:21 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:03:26 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:03:27 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:03:29 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:03:31 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:03:41 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:04:42 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:05:20 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:05:22 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:05:29 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:05:30 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:05:50 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:06:01 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:06:02 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:06:06 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:06:32 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:06:33 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:06:35 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:07:22 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:07:34 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:07:36 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:07:43 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:07:44 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:07:50 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:07:55 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:09:45 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:09:46 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:10:00 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:10:01 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:10:05 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:10:06 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:10:08 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:10:09 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:10:11 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:10:13 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:10:23 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:10:36 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:11:55 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:11:56 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:12:01 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:12:02 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:12:04 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:12:09 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:12:22 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:12:36 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:12:38 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:14:10 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:14:12 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:17:04 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:17:21 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:17:43 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:17:44 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:17:50 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:17:51 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:17:57 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:18:01 [[32minfo[39m] Method: GET URL: /api/checkLogin Status: 200}
-2024-09-09 19:41:23 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:41:28 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:41:40 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:41:42 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:41:48 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:41:50 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:41:51 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:41:54 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:41:57 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:41:59 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:00 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:01 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:03 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:09 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:10 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:12 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:13 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:15 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:16 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:18 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:27 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:28 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:29 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:30 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:32 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:34 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:42:35 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:42:51 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:43:03 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:43:07 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:43:08 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:43:10 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:43:12 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:43:13 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:43:15 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:43:39 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:43:42 [[31merror[39m] Error during login: column "timestamp" of relation "web_user" does not exist}
-2024-09-09 19:44:55 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:45:00 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:45:04 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:45:06 [[32minfo[39m] Database connection successful!}
-2024-09-09 19:45:09 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
-2024-09-09 19:45:10 [[31merror[39m] Error during login: null value in column "user_id" violates not-null constraint}
-2024-09-09 19:45:43 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:45:43 [[33mwarn[39m] Database connection failed:', getaddrinfo ENOTFOUND bbos-db-check.postgres.database.azure.com}
-2024-09-09 19:45:45 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:45:45 [[33mwarn[39m] Database connection failed:', getaddrinfo ENOTFOUND bbos-db-check.postgres.database.azure.com}
-2024-09-09 19:45:50 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:45:53 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:46:05 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:46:16 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:46:34 [[33mwarn[39m] Database connection failed:', read ECONNRESET}
-2024-09-09 19:46:44 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:46:45 [[32minfo[39m] Server started on port 9000}
-2024-09-09 19:47:14 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:01 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:02 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:06 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:15 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:16 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:19 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:21 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:34 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:36 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:41 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:42 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:50 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:52 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:11:54 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:11:55 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:12:01 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:02 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:04 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:12:05 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:06 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:12:33 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:34 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:12:35 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:37 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:12:44 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:12:45 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:13:18 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:13:19 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:13:20 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:13:21 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:02 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:04 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:06 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:08 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:09 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:20 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:21 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:24 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:25 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:29 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:31 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:14:37 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:14:39 [[32minfo[39m] Database connection successful!}
-2024-09-09 20:15:30 [[32minfo[39m] Server started on port 9000}
-2024-09-09 20:15:31 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:26:08 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:27:46 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:33:01 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:33:44 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:41:46 [[32minfo[39m] Database connection successful!}
+2024-09-09 13:42:24 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:46:36 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:49:39 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:51:34 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:51:58 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:53:47 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:54:20 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:54:29 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:54:33 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:54:42 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:16 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:28 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:32 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:37 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:40 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:44 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:55:54 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:56:00 [[32minfo[39m] Database connection successful!}
+2024-09-09 14:56:29 [[32minfo[39m] Database connection successful!}
+2024-09-09 15:01:19 [[31merror[39m] Error during login: res.status is not a function}
+2024-09-09 18:33:06 [[32minfo[39m] Server started on port 9000}
+2024-09-09 18:33:08 [[32minfo[39m] Database connection successful!}
+2024-09-09 18:33:12 [[32minfo[39m] Method: GET URL: /api/login Status: 200}
+2024-09-09 18:33:18 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-09 18:33:36 [[32minfo[39m] Server started on port 9000}
+2024-09-09 18:33:38 [[32minfo[39m] Database connection successful!}
+2024-09-09 18:33:43 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
+2024-09-09 18:51:30 [[32minfo[39m] Server started on port 9000}
+2024-09-09 18:51:32 [[32minfo[39m] Database connection successful!}
+2024-09-09 18:51:43 [[32minfo[39m] Method: POST URL: /api/login Status: 200}
