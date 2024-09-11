@@ -26,9 +26,8 @@ jobs:
         shell: bash
         run: |
           npm install
-          npm run build --if-present
-          npm run build:production  # If your project uses a specific build command
-          ls -la  # List the directory contents after the build
+          npm start
+       
 
       - name: Create ZIP artifact for deployment
         run: zip -r release.zip ./*  # Create zip at root level
