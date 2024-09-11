@@ -56,6 +56,9 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip -d release  # Unzip the file into 'release' directory
 
+      - name: Verify content structure
+        run: ls -R ./release  # Verify that all necessary files are present
+
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
