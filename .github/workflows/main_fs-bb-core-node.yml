@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # Default path is root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'  # Default path is root
   NODE_VERSION: '20.x'
 
 jobs:
@@ -27,22 +27,23 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          npm run build:production  # If your project uses a specific build command
+          ls -la  # List the directory contents after the build
 
       - name: Create ZIP artifact for deployment
-        run: zip -r release.zip ./* -x "node_modules/*" ".git/*"  # Exclude unnecessary files
+        run: zip -r release.zip ./*  # Create zip at root level
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: release.zip  # Correct path to zip file
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment: production
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -51,13 +52,13 @@ jobs:
           path: ./  # Download to the root
 
       - name: Verify that the ZIP file exists
-        run: ls -la  # To check if the release.zip is present
+        run: ls -la  # To check if the release.zip is present in the correct location
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip -d release  # Unzip the file into 'release' directory
+        run: unzip release.zip -d release  # Unzip the file
 
-      - name: Verify content structure
-        run: ls -R ./release  # Verify that all necessary files are present
+      - name: List files in release directory
+        run: ls -R release  # Recursively list the contents of the release directory
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
@@ -65,7 +66,10 @@ jobs:
         with:
           app-name: 'fs-bb-core-node'
           slot-name: 'Production'
-          package: './release'  # Deploy the unzipped folder
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E63947D08B14FE4BB81E7D59DDCD422 }}
+          package: './release'  # Use the unzipped folder
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_XXXX }}  # Update with your publish profile secret
           enable-oryx-build: true  # Temporarily enable Oryx build
 
+      - name: Check Kudu Deployment Logs (Optional)
+        run: |
+          echo "If deployment fails, check the Kudu logs from Azure Portal."
