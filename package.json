@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Azure Functions app with user authentication",
   "scripts": {
-    "start": "func start"
+    "start": "func start",
+    "build": "webpack --mode development",
+    "build:production": "webpack --mode production",
+    "test": "echo \"No tests yet...\""
   },
-
-  
   "dependencies": {
     "@azure/functions": "^4.0.0",
     "bcrypt": "^5.1.1",
