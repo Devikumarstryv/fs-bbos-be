@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "Azure Functions app with user authentication",
   "scripts": {
-    "start": "func start",
-    "build": "webpack --mode development",
-    "build:production": "webpack --mode production",
-    "test": "echo \"No tests yet...\""
+    "start": "func start"
   },
 
   
