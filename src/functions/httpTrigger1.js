@@ -16,14 +16,14 @@
             context.log(`Http function processed request for url "${request.url}"`);
 
             // Handle different request methods
-            if (request.method === 'POST') {
-                // Handle user login
-                return await userLogin(request, context);
-            } else {
+            // if (request.method === 'POST') {
+            //     // Handle user login
+            //     return await userLogin(request, context);
+            // } else {
                 // Handle other methods or provide a default response
                 const name = request.query.get('name') || await request.text() || 'world';
                 return { status: 200, body: `Hello, ${name}!` };
-            }
+            // }
         }
     });
 
