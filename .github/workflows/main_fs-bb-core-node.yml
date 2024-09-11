@@ -26,6 +26,8 @@ jobs:
         shell: bash
         run: |
           npm install
+          npm run build --if-present
+          npm run test --if-present
 
       - name: Create ZIP artifact for deployment
         run: zip -r release.zip ./*  # Create zip at root level
@@ -57,16 +59,16 @@ jobs:
       - name: List files in release directory
         run: ls -R release  # Recursively list the contents of the release directory
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}  # Update with your Azure credentials secret
+
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
           app-name: 'fs-bb-core-node'
           slot-name: 'Production'
-          package: './release'  # Use the unzipped folder
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_XXXX }}  # Update with your publish profile secret
-          enable-oryx-build: true  # Temporarily enable Oryx build
-
-      - name: Check Kudu Deployment Logs (Optional)
-        run: |
-          echo "If deployment fails, check the Kudu logs from Azure Portal."
+          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E63947D08B14FE4BB81E7D59DDCD422 }}
