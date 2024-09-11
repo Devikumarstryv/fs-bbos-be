@@ -67,3 +67,5 @@ jobs:
           slot-name: 'Production'
           package: './release'  # Deploy the unzipped folder
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5E63947D08B14FE4BB81E7D59DDCD422 }}
+          enable-oryx-build: true  # Temporarily enable Oryx build
+
