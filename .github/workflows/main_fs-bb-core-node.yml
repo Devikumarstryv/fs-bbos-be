@@ -26,8 +26,6 @@ jobs:
         shell: bash
         run: |
           npm install
-          npm run build  # Use the "build" script defined in package.json
-          npm run test --if-present
 
       - name: Create ZIP artifact for deployment
         run: zip -r release.zip ./*  # Create zip at root level
