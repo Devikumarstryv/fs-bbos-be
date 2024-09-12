@@ -1,67 +1,67 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js project to Azure Function App - fs-dev-sample
+name: Build and deploy Node.js to Azure Function App
 
 on:
   push:
     branches:
-      - depolyment
+      - main
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your project, usually the root
+  NODE_VERSION: '18.x' # Since your dependencies like @azure/functions require node >=18
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
-      - name: Setup Node ${{ env.NODE_VERSION }} Environment
+      # Step 2: Set up Node.js
+      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: 'Resolve Project Dependencies Using Npm'
-        shell: bash
-        run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-          popd
+      # Step 3: Install Dependencies
+      - name: Install dependencies
+        run: npm install
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+      # Step 4: Build the application
+      - name: Build the application
+        run: npm run build
 
-      - name: Upload artifact for deployment job
+      # Step 5: Zip artifact for deployment
+      - name: Zip the project
+        run: zip -r functionapp.zip .
+
+      # Step 6: Upload the artifact for deployment
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: release.zip
+          name: function-app
+          path: functionapp.zip
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    __environment__
-    
+
     steps:
-      - name: Download artifact from build job
+      # Step 1: Download the build artifact
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: node-app
+          name: function-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
-      - name: 'Run Azure Functions Action'
+      # Step 2: Unzip artifact
+      - name: Unzip the project
+        run: unzip functionapp.zip
+
+      # Step 3: Deploy to Azure Function App
+      - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
-        id: fa
         with:
-          app-name: 'fs-dev-sample'
-          slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC20D14DA5724E46B01486F76AAD8A9A }}
+          app-name: 'your-azure-function-app-name' # Replace with your Azure Function App name
+          package: './functionapp.zip'
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Make sure to set this in your GitHub repository's secrets
