@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "start": "func start",
-    "test": "echo \"No tests yet...\"",
-    "build": "func start"
-  },
+    "test": "echo \"No tests yet...\""  },
   "dependencies": {
     "@azure/functions": "^4.0.0",
     "pg": "^8.12.0"
