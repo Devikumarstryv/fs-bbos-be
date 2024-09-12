@@ -1,63 +1,32 @@
-name: Build and deploy Node.js to Azure Function App
+name: Deploy to Azure App Service
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
-
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your project, usually the root
-  NODE_VERSION: '18.x' # Since your dependencies like @azure/functions require node >=18
+      - main  # Or the branch you want to deploy from
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      # Step 1: Checkout the repository
-      - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v4
-
-      # Step 2: Set up Node.js
-      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      # Step 3: Install Dependencies
-      - name: Install dependencies
-        run: npm ci # 'npm ci' is faster and more reliable for CI environments
-
-      # Step 4: Zip the project for deployment
-      - name: Zip the project
-        run: zip -r functionapp.zip . -x node_modules/\* # Exclude node_modules
-
-      # Step 5: Upload the artifact for deployment
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: function-app
-          path: functionapp.zip
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
-      # Step 1: Download the build artifact
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: function-app
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v4  # Updated to the latest version
 
-      # Step 2: Unzip the project
-      - name: Unzip the project
-        run: unzip functionapp.zip
+    - name: 'Set up Node.js'  # Example for Node.js apps, replace with your tech stack
+      uses: actions/setup-node@v4  # Updated to the latest version
+      with:
+        node-version: 'lts/*'  # Use the latest LTS version of Node.js
 
-      # Step 3: Deploy to Azure Function App
-      - name: 'Deploy to Azure Functions'
-        uses: Azure/functions-action@v1
-        with:
-          app-name: 'fs-dev-sample' # Replace with your Azure Function App name
-          package: './functionapp.zip'
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Ensure this is added to your GitHub secrets
+    - name: 'Install dependencies'
+      run: npm ci  # Faster and more reliable than npm install
+
+    - name: 'Build project'
+      run: npm run build  # Replace with your build command, if applicable
+
+    - name: 'Deploy to Azure Web App'
+      uses: azure/webapps-deploy@v3  # Latest version for Azure deployment
+      with:
+        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
