@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js project to Azure Function App - fs-bb-core-node
 
 on:
@@ -10,8 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '20.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './release.zip' # updated to match the path to the artifact created
+  NODE_VERSION: '20.x'
 
 jobs:
   build:
@@ -46,8 +43,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    __environment__
-    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -63,5 +58,5 @@ jobs:
         with:
           app-name: 'fs-bb-core-node'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: './release.zip' # path to the unzipped artifact
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43DD7382CB6F4F89A666B18417E482B3 }}
