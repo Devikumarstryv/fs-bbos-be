@@ -16,15 +16,15 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18.x'  # Ensure Node.js version is supported
+        node-version: '16.x'  # Use a compatible version of Node.js
 
     - name: Install dependencies
       run: npm install
 
-    - name: Deploy to Azure Functions (without ZIP)
+    - name: Deploy to Azure Functions (with remote build)
       uses: azure/functions-action@v1
       with:
         app-name: 'node-deploy-test-strvy'
-        package: './src/functions'  # Directly point to the folder, no ZIP
+        package: './src/functions'  # The folder with your code
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9CE87E59ABD4CC891294A07C2F55D01 }}
-        deployment-method: 'run-from-package'
+        remote-build: true
