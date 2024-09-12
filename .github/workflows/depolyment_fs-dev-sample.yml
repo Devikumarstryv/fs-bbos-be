@@ -1,18 +1,20 @@
-name: Build and deploy Node.js to Azure Function App
+name: Build and Deploy Node.js to Azure Function App (GitFlow)
 
 on:
   push:
     branches:
       - main
+      - develop
   workflow_dispatch:
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your project, usually the root
-  NODE_VERSION: '18.x' # Since your dependencies like @azure/functions require node >=18
+  NODE_VERSION: '18.x' # Node.js version compatible with your dependencies
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       # Step 1: Checkout the repository
       - name: Checkout repository
@@ -43,9 +45,10 @@ jobs:
           name: function-app
           path: functionapp.zip
 
-  deploy:
+  deploy-development:
     runs-on: ubuntu-latest
     needs: build
+    if: github.ref == 'refs/heads/develop'
 
     steps:
       # Step 1: Download the build artifact
@@ -58,10 +61,34 @@ jobs:
       - name: Unzip the project
         run: unzip functionapp.zip
 
-      # Step 3: Deploy to Azure Function App
-      - name: Deploy to Azure Functions
+      # Step 3: Deploy to Development Azure Function App
+      - name: Deploy to Development Azure Function App
         uses: Azure/functions-action@v1
         with:
-          app-name: 'fs-dev-sample' # Replace with your Azure Function App name
+          app-name: 'fs-dev-sample-dev' # Replace with your Azure Function App name for development
           package: './functionapp.zip'
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Make sure to set this in your GitHub repository's secrets
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_DEV_PUBLISH_PROFILE }} # Secret for development environment
+
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      # Step 1: Download the build artifact
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: function-app
+
+      # Step 2: Unzip artifact
+      - name: Unzip the project
+        run: unzip functionapp.zip
+
+      # Step 3: Deploy to Production Azure Function App
+      - name: Deploy to Production Azure Function App
+        uses: Azure/functions-action@v1
+        with:
+          app-name: 'fs-dev-sample' # Replace with your Azure Function App name for production
+          package: './functionapp.zip'
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Secret for production environment
