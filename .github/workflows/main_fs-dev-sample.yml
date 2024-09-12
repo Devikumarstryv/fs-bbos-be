@@ -64,4 +64,4 @@ jobs:
           app-name: 'fs-dev-sample'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9CE87E59ABD4CC891294A07C2F55D01 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B1085B1D760B4FF7AA206FDA00CE4E5E }}
