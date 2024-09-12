@@ -26,14 +26,13 @@ jobs:
 
       # Step 3: Install Dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci # 'npm ci' is faster and more reliable for CI environments
 
-
-      # Step 5: Zip artifact for deployment
+      # Step 4: Zip the project for deployment
       - name: Zip the project
-        run: zip -r functionapp.zip .
+        run: zip -r functionapp.zip . -x node_modules/\* # Exclude node_modules
 
-      # Step 6: Upload the artifact for deployment
+      # Step 5: Upload the artifact for deployment
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -42,6 +41,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
       # Step 1: Download the build artifact
@@ -50,7 +50,7 @@ jobs:
         with:
           name: function-app
 
-      # Step 2: Unzip artifact
+      # Step 2: Unzip the project
       - name: Unzip the project
         run: unzip functionapp.zip
 
