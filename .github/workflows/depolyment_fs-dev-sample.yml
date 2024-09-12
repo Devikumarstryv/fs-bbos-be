@@ -16,15 +16,17 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18.x'  # Ensure Node.js 16.x or later for v4 compatibility
+        node-version: '16.x'  # Switch to Node.js 16.x for better compatibility with Azure Functions
 
     - name: Install dependencies
       run: npm install
 
+    - name: Create ZIP package
+      run: zip -r app.zip ./src/functions  # Ensure you're zipping the correct directory
 
     - name: Deploy to Azure Functions
       uses: azure/functions-action@v1
       with:
         app-name: 'node-deploy-test-strvy'
-        package: './src/functions'  # Adjust this path to your packaged files location
+        package: './app.zip'  # Use the newly created ZIP package
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9CE87E59ABD4CC891294A07C2F55D01 }}
