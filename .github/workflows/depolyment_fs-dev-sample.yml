@@ -37,9 +37,7 @@ jobs:
       # Step 6: Upload the artifact for deployment
       - name: Upload artifact
         uses: actions/upload-artifact@v4
-        with:
-          name: function-app
-          path: functionapp.zip
+     
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,14 +50,10 @@ jobs:
         with:
           name: function-app
 
-      # Step 2: Unzip artifact
-      - name: Unzip the project
-        run: unzip functionapp.zip
 
       # Step 3: Deploy to Azure Function App
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         with:
           app-name: 'fs-dev-sample' # Replace with your Azure Function App name
-          package: './functionapp.zip'
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Ensure this is added to your GitHub secrets
