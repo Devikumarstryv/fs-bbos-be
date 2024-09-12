@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path  to your project, usually the root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your project, usually the root
   NODE_VERSION: '18.x' # Since your dependencies like @azure/functions require node >=18
 
 jobs:
@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout the repository
-      - name: 'Checkout GitHub Action'
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
+      # Step 2: Set up Node.js environment
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -59,7 +59,7 @@ jobs:
         run: unzip functionapp.zip
 
       # Step 3: Deploy to Azure Function App
-      - name: 'Deploy to Azure Functions'
+      - name: Deploy to Azure Functions
         uses: Azure/functions-action@v1
         with:
           app-name: 'fs-dev-sample' # Replace with your Azure Function App name
