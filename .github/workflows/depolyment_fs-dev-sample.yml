@@ -3,7 +3,7 @@ name: Deploy Azure Function App
 on:
   push:
     branches:
-      - main  # This branch triggers deployment
+      - kavin-test  # This branch triggers deployment
 
 jobs:
   build-and-deploy:
