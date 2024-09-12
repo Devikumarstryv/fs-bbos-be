@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to your project, usually the root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # path to you project, usually the root
   NODE_VERSION: '18.x' # Since your dependencies like @azure/functions require node >=18
 
 jobs:
