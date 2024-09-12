@@ -1,32 +1,33 @@
-name: Deploy to Azure App Service
+name: Deploy Azure Function App
 
 on:
   push:
     branches:
-      - main  # Or the branch you want to deploy from
+      - main  # This branch triggers deployment
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 'Checkout GitHub Action'
-      uses: actions/checkout@v4  # Updated to the latest version
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: 'Set up Node.js'  # Example for Node.js apps, replace with your tech stack
-      uses: actions/setup-node@v4  # Updated to the latest version
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
       with:
-        node-version: 'lts/*'  # Use the latest LTS version of Node.js
+        node-version: '18.x'  # Ensure Node.js 16.x or later for v4 compatibility
 
-    - name: 'Install dependencies'
-      run: npm ci  # Faster and more reliable than npm install
+    - name: Install dependencies
+      run: npm install
 
-    - name: 'Build project'
-      run: npm run build  # Replace with your build command, if applicable
+    # If your project needs building, include this step:
+    # - name: Build the project
+    #   run: npm run build
 
-    - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v3  # Latest version for Azure deployment
+    - name: Deploy to Azure Functions
+      uses: azure/functions-action@v1
       with:
-        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+        app-name: 'fs-bb-core-node'
+        package: .
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9CE87E59ABD4CC891294A07C2F55D01 }}
